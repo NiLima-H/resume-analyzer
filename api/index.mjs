@@ -5,7 +5,7 @@ import helmet from "helmet";
 
 
 import analysisRoutes from "./routes/analysisRoutes.mjs";
-import healthroutes from "./routes/healthroutes.mjs";
+import healthRoutes from "./routes/healthroutes.mjs";
 import supabaseRoutes from "./routes/supabaseRoutes.mjs";
 
 const app = express();
