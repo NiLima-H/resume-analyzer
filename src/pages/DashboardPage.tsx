@@ -69,7 +69,7 @@ function ScoreCircle({
 }
 
 export default function DashboardPage() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const {
     data: analyses = [],
     isLoading,
