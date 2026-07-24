@@ -4,7 +4,7 @@
 > An AI-powered Resume Analyzer SaaS that helps job seekers optimize their resumes for specific job descriptions using deterministic ATS scoring and LLM-powered feedback.
 
 ---
-https://resume-analyzer-teal-omega.vercel.app/login
+https://resume-analyzer-teal-omega.vercel.app
 ## ✨ Features
 
 - 🔐 Secure Email Authentication
