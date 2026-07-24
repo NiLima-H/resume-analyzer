@@ -1,4 +1,5 @@
 # Resume.AI — Smart Career Analysis
+https://resume-analyzer-teal-omega.vercel.app/login
 
 > An AI-powered Resume Analyzer SaaS that helps job seekers optimize their resumes for specific job descriptions using deterministic ATS scoring and LLM-powered feedback.
 
