@@ -80,15 +80,16 @@ router.post(
 
       // 3. Extract text from the uploaded resume
      // 3. Extract text from the uploaded resume
-let resumeText = await parseResumeFile(
-  request.file,
-);
+const isImage =
+  request.file.mimetype === "image/png" ||
+  request.file.mimetype === "image/jpeg";
 
+let resumeText = "";
 let parserUsed = "standard";
 
-if (resumeText.trim().length < 50) {
+if (isImage) {
   console.log(
-    "Standard parser found little text. Trying OCR.Space...",
+    "Image resume detected. Using OCR.Space...",
   );
 
   resumeText =
@@ -98,6 +99,24 @@ if (resumeText.trim().length < 50) {
     );
 
   parserUsed = "ocr-space";
+} else {
+  resumeText = await parseResumeFile(
+    request.file,
+  );
+
+  if (resumeText.trim().length < 50) {
+    console.log(
+      "Standard parser found little text. Trying OCR.Space...",
+    );
+
+    resumeText =
+      await extractTextWithOcrSpace(
+        request.file,
+        input.language,
+      );
+
+    parserUsed = "ocr-space";
+  }
 }
 
 if (resumeText.trim().length < 50) {
